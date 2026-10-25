@@ -1,0 +1,74 @@
+{
+  "workbench.iconTheme": "vscode-great-icons",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.linkedEditing": true,
+  "git.suggestSmartCommit": false,
+  "git.autofetch": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.minimap.enabled": false,
+  "zenMode.hideStatusBar": false,
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "dart": true
+  },
+  "vscode-edge-devtools.headless": false,
+  "vscode-edge-devtools.webhint": false,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": [],
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "mdb.mcp.server": "prompt",
+  "postman.mcp.notifications.postmanMCP": false,
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vscode-pets.theme": "autumn",
+  "workbench.browser.openLocalhostLinks": true,
+  "workbench.browser.enableChatTools": true,
+  "NugetGallery.credentialProviderFolder": "{user-profile}/.nuget/plugins/netcore/CredentialProvider.Microsoft",
+  "NugetGallery.skipRestore": "false",
+  "NugetGallery.sources": [
+    "{\"name\":\"nuget.org\",\"url\":\"https://api.nuget.org/v3/index.json\"}"
+  ],
+  "diffEditor.codeLens": true,
+  "js/ts.implementationsCodeLens.enabled": true,
+  "js/ts.implementationsCodeLens.showOnAllClassMethods": true,
+  "js/ts.implementationsCodeLens.showOnInterfaceMethods": true,
+  "js/ts.referencesCodeLens.showOnAllFunctions": true,
+  "js/ts.referencesCodeLens.enabled": true,
+  "terminal.integrated.initialHint": false,
+  "workbench.panel.showLabels": false,
+  "mssql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
+  "continue.enableNextEdit": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "typescript": "typescript"
+  },
+  "typescript.experimental.useTsgo": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "window.newWindowProfile": "Default",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.activityBar.location": "top",
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "ROOT"
+    }
+  ]
+}
