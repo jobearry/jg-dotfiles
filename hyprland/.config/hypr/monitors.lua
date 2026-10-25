@@ -8,7 +8,7 @@ hl.monitor({
 
 -- default laptop monitor
 hl.monitor({
-    output = "eDP-2",
+    output = "eDP-1",
     mode = "preferred",
     position = "1920x0",
     scale = "1",
