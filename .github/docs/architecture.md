@@ -42,6 +42,7 @@ Current observed layout:
 | `hyprland/` | `~/.config/hypr/` | Active; Hyprland 0.56+ Lua and `hyprpaper.conf`. |
 | `walker/` | `~/.config/walker/` | Active; Walker overrides merged with packaged defaults. |
 | `elephant/` | `~/.config/elephant/` | Active; Elephant overrides merged with built-in defaults. |
+| `fonts/` | `~/.local/share/fonts/` | JetBrainsMono Nerd Font Regular and its OFL license. |
 | `waybar/` | `~/.config/waybar/` | Active; folder symlink. |
 | `code-oss/` | `~/.config/Code - OSS/User/` | Active; `settings.json`. |
 | `extension-lists/` | None | Reference data only. |

@@ -8,35 +8,51 @@
 }
 
 window#waybar {
-    background: rgba(15, 17, 22, 0.72);
+    background: rgba(15, 17, 22, 0.60);
     color: #e6e6e6;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    /* border-radius: 999999; */
 }
 
 #workspaces,
+#mode,
+#scratchpad,
+#custom-media,
+#custom-wallpaper,
 #window,
+#mpd,
+#idle_inhibitor,
 #clock,
 #pulseaudio,
 #network,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#keyboard-state,
+#language,
 #battery,
+#battery.bat2,
 #tray,
-#custom-wallpaper {
-    padding: 0 10px;
-    margin: 5px 4px;
+#custom-power {
+    padding: 0 6px;
+    margin: 5px 0;
     background: transparent;
 }
 
 #workspaces button {
     color: #9299a6;
-    padding: 0 8px;
     background: transparent;
-    box-shadow: none;
+    padding: 0 4px;
+    margin: 0 3px;
 }
 
 #workspaces button.active {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.12);
-    border-bottom: 2px solid #80cbc4;
+    /* border-bottom: 2px solid #80cbc4; */
+    border: 1.5px solid #ffffff;
 }
 
 #workspaces button:hover {
@@ -71,4 +87,3 @@ window#waybar {
 #battery.critical {
     color: #e06c75;
 }
-

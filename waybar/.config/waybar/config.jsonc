@@ -8,53 +8,54 @@
     "margin-right": 8,
     "exlusive": false,
     "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 5, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
         "custom/media",
+        "ext/workspaces",
         "custom/wallpaper"
     ],
     "modules-center": [
         "sway/window"
     ],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
+        // "mpd",
+        // "idle_inhibitor",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
-        "backlight",
+        // "backlight",
         "keyboard-state",
         "sway/language",
-        "battery",
+        // "battery",
         "battery#bat2",
         "clock",
-        "tray",
+        // "tray",
         "custom/power"
     ],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "ext/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "on-click": "activate",
+        "format": "{name}"
+        // "format-icons": {
+        //     "1": "",
+        //     "2": "",
+        //     "3": "",
+        //     "4": "",
+        //     "5": "",
+        //     "urgent": "",
+        //     "focused": "",
+        //     "default": ""
+        // }
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -210,7 +211,7 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/wallpaper": {
-        "format": "🖼 ",
+        "format": "\udb83\ude09",
         "tooltip": true,
         "tooltip-format": "Click: choose wallpaper\nRight-click: restore last wallpaper",
         "on-click": "waypaper",
