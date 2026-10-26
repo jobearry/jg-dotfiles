@@ -19,7 +19,8 @@ window#waybar {
 #pulseaudio,
 #network,
 #battery,
-#tray {
+#tray,
+#custom-wallpaper {
     padding: 0 10px;
     margin: 5px 4px;
     background: transparent;
@@ -54,8 +55,13 @@ window#waybar {
 #pulseaudio,
 #network,
 #battery,
-#tray {
+#tray,
+#custom-wallpaper {
     color: #c5ccd6;
+}
+
+#custom-wallpaper:hover {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 #battery.warning {

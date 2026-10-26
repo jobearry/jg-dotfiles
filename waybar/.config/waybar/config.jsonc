@@ -14,7 +14,8 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "custom/media"
+        "custom/media",
+        "custom/wallpaper"
     ],
     "modules-center": [
         "sway/window"
@@ -207,6 +208,13 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/wallpaper": {
+        "format": "🖼 ",
+        "tooltip": true,
+        "tooltip-format": "Click: choose wallpaper\nRight-click: restore last wallpaper",
+        "on-click": "waypaper",
+        "on-click-right": "waypaper --restore"
     },
     "custom/power": {
         "format" : "⏻ ",
