@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=JG Breeze Sample
+Description=Dark solid background with centered login controls and session selection
+Author=JG Dotfiles
+License=LGPL-2.0-or-later
+Type=sddm-theme
+Version=1.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=jg-breeze-sample
+Theme-API=2.0
+QtVersion=6
