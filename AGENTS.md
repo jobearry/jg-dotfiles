@@ -22,6 +22,8 @@ bash/.bashrc                     -> ~/.bashrc
 | --- | --- | --- |
 | `bash/` | `~/.bashrc`, `~/.bash_profile`, `~/.bash_logout` | Shell basics. |
 | `hyprland/` | `~/.config/hypr/` | Hyprland 0.56+ Lua config plus `hyprpaper.conf`. |
+| `walker/` | `~/.config/walker/` | Walker launcher config; service is prewarmed by Hyprland autostart. |
+| `elephant/` | `~/.config/elephant/` | Elephant provider config; owned by Hyprland autostart, not systemd. |
 | `waybar/` | `~/.config/waybar/` | Whole directory; currently a folded symlink. |
 | `code-oss/` | `~/.config/Code - OSS/User/` | VS Code user settings. |
 | `extension-lists/` | Not installed | Reference extension exports, not a Stow package. |
@@ -70,6 +72,14 @@ Do not edit installed files under `$HOME` directly. They are usually symlinks in
 - `autostart.lua` launches Waybar, hyprpaper, and other session services, then restores the Waypaper wallpaper after a short delay. Preserve that flow.
 - Do not launch Hyprland or Waybar from a KDE/X11 session to test changes.
 
+### Walker and Elephant
+
+- `autostart.lua` starts `elephant` and `walker --gapplication-service`.
+- `SUPER + SPACE` activates Walker through `$XDG_RUNTIME_DIR/walker/walker.sock` with `socat`, falling back to the `walker` binary if the socket is unavailable. Do not revert to `hl.dsp.exec_cmd("walker")`.
+- Do not run `elephant service enable`. It creates a user systemd unit that outlives the graphical session and duplicates the Hyprland-autostarted Elephant.
+- Only one Elephant can own `$XDG_RUNTIME_DIR/elephant/elephant.sock`. Check for duplicates before debugging launcher issues.
+- Walker uses the `darker` theme in `walker/.config/walker/themes/darker/style.css`. Keep its window background translucent; the `walker` layer rule in `looknfeel.lua` enables blur.
+
 ### Waybar
 
 - `~/.config/waybar` is a symlink into this repo. Edit only the repo files.
@@ -110,6 +120,8 @@ hyprctl getoption misc:disable_splash_rendering
 
 # Inside Hyprland only
 pkill -SIGUSR2 waybar
+pgrep -a -x walker
+ss -xlpn | grep -E 'walker|elephant'
 ```
 
 ## Further context

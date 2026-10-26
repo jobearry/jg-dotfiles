@@ -1,0 +1,9 @@
+# Walker merges this file with the packaged defaults in /etc/xdg/walker.
+theme = "darker"
+
+[providers]
+# Default is 50. Keeping this lower makes the result list render faster.
+max_results = 20
+
+# Uncomment if previews feel slow:
+# ignore_preview = ["desktopapplications"]

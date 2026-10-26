@@ -34,6 +34,14 @@ Use the patterns already present in `keybindings.lua` and `autostart.lua`.
 - Hyprland's `misc:disable_splash_rendering` does not control hyprpaper's splash.
 - `autostart.lua` starts hyprpaper and runs `waypaper --restore` after a short delay. Do not remove that restore step.
 
+## Walker and Elephant
+
+- `autostart.lua` starts `elephant` and `walker --gapplication-service`.
+- `SUPER + SPACE` should activate Walker through `$XDG_RUNTIME_DIR/walker/walker.sock` with `socat`. The fallback to `walker` is only for a missing service.
+- Do not enable `elephant.service`; it duplicates the Hyprland-autostarted instance and conflicts on the shared Elephant socket.
+- Keep Walker and Elephant overrides in the `walker/` and `elephant/` Stow packages, not under `hyprland/`.
+- Walker blur is applied by the `walker` layer rule in `looknfeel.lua`. Keep the `darker` theme's background translucent or the blur will not be visible.
+
 ## Reloading and verification
 
 ```sh

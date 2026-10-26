@@ -5,7 +5,8 @@ local menu        = "hyprlauncher"
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
  
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("walker"))
+-- Walker runs as a service; poke its socket directly to avoid starting the client binary.
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("if [ -S \"$XDG_RUNTIME_DIR/walker/walker.sock\" ] && command -v socat >/dev/null 2>&1; then socat -u /dev/null UNIX-CONNECT:\"$XDG_RUNTIME_DIR/walker/walker.sock\" || exec walker; else exec walker; fi"))
 hl.bind("SUPER + RETURN",  hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + SHIFT + RETURN", hl.dsp.exec_cmd("firefox"))
 

@@ -1,0 +1,4 @@
+# Elephant merges this file with its built-in defaults.
+# App launches currently use systemd-run --user --scope via autodetection.
+# Uncomment to launch directly and skip that overhead:
+# auto_detect_launch_prefix = false

@@ -3,6 +3,14 @@ hl.layer_rule({
     blur = true,
     ignore_alpha = 0.2,
 })
+
+hl.layer_rule({
+    name = "blur-walker",
+    match = { namespace = "walker" },
+    blur = true,
+    ignore_alpha = 0.2,
+})
+
 hl.config({
     general = {
         gaps_in  = 5,
