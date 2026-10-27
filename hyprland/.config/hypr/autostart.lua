@@ -5,6 +5,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("waybar")
   hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("hypridle")
   -- Re-apply the wallpaper chosen with waypaper
   hl.exec_cmd("sh -c 'sleep 1; waypaper --restore'")
   -- Elephant is owned by this session; do not enable the systemd user unit.

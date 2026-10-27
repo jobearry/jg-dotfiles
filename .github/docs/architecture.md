@@ -39,7 +39,7 @@ Current observed layout:
 | Top-level path | Stow target | Status / notes |
 | --- | --- | --- |
 | `bash/` | `~/.bashrc`, `~/.bash_profile`, `~/.bash_logout` | Active. |
-| `hyprland/` | `~/.config/hypr/` | Active; Hyprland 0.56+ Lua and `hyprpaper.conf`. |
+| `hyprland/` | `~/.config/hypr/` | Active; Hyprland 0.56+ Lua, hyprpaper, and hyprlock config. |
 | `walker/` | `~/.config/walker/` | Active; Walker overrides merged with packaged defaults. |
 | `elephant/` | `~/.config/elephant/` | Active; Elephant overrides merged with built-in defaults. |
 | `fonts/` | `~/.local/share/fonts/` | JetBrainsMono Nerd Font Regular and its OFL license. |
@@ -64,6 +64,8 @@ The authoritative list is `git ls-files`. Empty directories are not tracked by g
 - `keybindings.lua` - keybinds
 - `window-rules.lua` - window and layer rules
 - `hyprpaper.conf` - hyprpaper configuration (`splash = false`)
+- `hyprlock.conf` - Hyprland lock screen settings (hyprlock config format)
+- `hypridle.conf` - lock before system sleep and wake the display after resume
 
 ## Wallpaper flow
 
@@ -102,6 +104,7 @@ Walker uses the `darker` theme from the `walker` package. Its background is tran
 - Hyprland's `misc:disable_splash_rendering` does not control hyprpaper's splash overlay.
 - Elephant is intentionally owned by Hyprland autostart. Do not enable `elephant.service`; it outlives the session and conflicts with the autostarted instance on the shared socket.
 - Walker is opened through `$XDG_RUNTIME_DIR/walker/walker.sock`, not by starting the `walker` binary.
+- `SUPER + M` starts `hyprlock` to lock the current Hyprland session; the `hyprlock` package must be installed.
 
 ## Validation
 

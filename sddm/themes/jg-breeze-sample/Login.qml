@@ -133,7 +133,19 @@ SessionManagementScreen {
             id: passwordBox
             font.family: loginFont.name
             font.pointSize: fontSize + 1
+            font.letterSpacing: 3
             Layout.fillWidth: true
+            padding: Kirigami.Units.smallSpacing
+            Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+
+            background: Rectangle {
+                color: "#1e1e24"
+                radius: Kirigami.Units.smallSpacing
+                border.color: passwordBox.activeFocus
+                    ? Kirigami.Theme.highlightColor
+                    : Kirigami.Theme.disabledTextColor
+                border.width: 1
+            }
 
             placeholderText: i18ndc("plasma-desktop-sddm-theme",  "@info:placeholder in textfield", "Password")
             focus: !showUsernamePrompt || lastUserName
