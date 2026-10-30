@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -ne 2 || $1 != "-r" ]]; then
+  echo "Usage: jg -r <name>" >&2
+  exit 2
+fi
+
+name=$2
+if [[ ! $name =~ ^[a-zA-Z0-9_-]+$ ]]; then
+  echo "Name may contain only letters, numbers, underscores, and hyphens." >&2
+  exit 2
+fi
+
+dir="${XDG_CONFIG_HOME:-$HOME/.config}/jg"
+file="$dir/$name"
+
+mkdir -p "$dir"
+chmod 700 "$dir"
+
+if [[ ! -f $file ]]; then
+  read -r -p "SSH IP or hostname: " host
+  read -r -p "SSH username: " user
+
+  if [[ -z $host || -z $user || $host == *[[:space:]]* || $user == *[[:space:]]* ]]; then
+    echo "Host and username must be non-empty and contain no spaces." >&2
+    exit 2
+  fi
+
+  umask 077
+  printf '%s\n%s\n' "$host" "$user" > "$file"
+fi
+
+{
+  IFS= read -r host
+  IFS= read -r user
+} < "$file"
+
+exec ssh "$user@$host"
