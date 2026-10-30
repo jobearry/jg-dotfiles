@@ -41,3 +41,14 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+-- satty is the screenshot annotator launched from scripts/screenshot.sh.
+-- Keep it floating so it never tiles into the window being captured.
+hl.window_rule({
+    name  = "float-satty",
+    match = { class = "^com\\.gabm\\.satty$" },
+
+    float  = true,
+    center = true,
+    size   = "70% 70%",
+})

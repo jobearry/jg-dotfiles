@@ -138,6 +138,11 @@ SessionManagementScreen {
             padding: Kirigami.Units.smallSpacing
             Layout.preferredHeight: Kirigami.Units.gridUnit * 2
 
+            // A custom background stops the TextField from inheriting the theme,
+            // so pin the colours used on the dark field background.
+            color: "#ffffff"
+            placeholderTextColor: "#9aa0a8"
+
             background: Rectangle {
                 color: "#1e1e24"
                 radius: Kirigami.Units.smallSpacing

@@ -27,6 +27,11 @@ Item {
     Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
     Kirigami.Theme.inherit: false
 
+    // The greeter runs as the `sddm` user, which has no KDE colour scheme, so do
+    // not rely on the fallback palette for text over the dark background.
+    Kirigami.Theme.textColor: "#ffffff"
+    Kirigami.Theme.disabledTextColor: "#9aa0a8"
+
     width: 1600
     height: 900
 

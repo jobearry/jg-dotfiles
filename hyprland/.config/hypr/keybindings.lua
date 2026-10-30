@@ -11,12 +11,20 @@ hl.bind("SUPER + SHIFT + RETURN", hl.dsp.exec_cmd("firefox"))
 
 local closeWindowBind = hl.bind("SUPER + W", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
+-- Log out: use hyprshutdown's menu when present, otherwise quit Hyprland directly.
+hl.bind("SUPER + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + P", hl.dsp.window.pseudo())
 hl.bind("SUPER + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+
+-- Screenshots: grim captures, satty annotates, wl-copy copies (see scripts/screenshot.sh)
+local screenshot = "$HOME/.config/hypr/scripts/screenshot.sh"
+hl.bind("SUPER + SHIFT + S",    hl.dsp.exec_cmd(screenshot .. " region"))
+hl.bind("SUPER + Print",        hl.dsp.exec_cmd(screenshot .. " output"))
+hl.bind("SUPER + SHIFT + Print", hl.dsp.exec_cmd(screenshot .. " window"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind("SUPER + left",  hl.dsp.focus({ direction = "left" }))
@@ -34,7 +42,7 @@ end
 
 -- Example special workspace (scratchpad)
 hl.bind("SUPER + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind("SUPER + SHIFT + M", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
