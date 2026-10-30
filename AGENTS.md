@@ -16,11 +16,13 @@ Each top-level directory is normally a GNU Stow package that mirrors the target 
 hyprland/.config/hypr/misc.lua   -> ~/.config/hypr/misc.lua
 waybar/.config/waybar/style.css  -> ~/.config/waybar/style.css
 bash/.bashrc                     -> ~/.bashrc
+local-bin/.local/bin/jg          -> ~/.local/bin/jg
 ```
 
 | Path | Installed to | Notes |
 | --- | --- | --- |
 | `bash/` | `~/.bashrc`, `~/.bash_profile`, `~/.bash_logout` | Shell basics. |
+| `local-bin/` | `~/.local/bin/` | Personal executable scripts. |
 | `hyprland/` | `~/.config/hypr/` | Hyprland 0.56+ Lua config plus `hyprpaper.conf`. |
 | `walker/` | `~/.config/walker/` | Walker launcher config; service is prewarmed by Hyprland autostart. |
 | `elephant/` | `~/.config/elephant/` | Elephant provider config; owned by Hyprland autostart, not systemd. |
@@ -127,5 +129,6 @@ ss -xlpn | grep -E 'walker|elephant'
 ## Further context
 
 - [.github/docs/architecture.md](.github/docs/architecture.md)
+- [.github/docs/bash-scripts.md](.github/docs/bash-scripts.md)
 - [.github/rules/repository.rules.md](.github/rules/repository.rules.md)
 - [.github/instructions/](.github/instructions/)

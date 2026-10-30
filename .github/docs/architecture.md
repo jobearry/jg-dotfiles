@@ -39,6 +39,7 @@ Current observed layout:
 | Top-level path | Stow target | Status / notes |
 | --- | --- | --- |
 | `bash/` | `~/.bashrc`, `~/.bash_profile`, `~/.bash_logout` | Active. |
+| `local-bin/` | `~/.local/bin/` | Personal executable scripts. |
 | `hyprland/` | `~/.config/hypr/` | Active; Hyprland 0.56+ Lua, hyprpaper, and hyprlock config. |
 | `walker/` | `~/.config/walker/` | Active; Walker overrides merged with packaged defaults. |
 | `elephant/` | `~/.config/elephant/` | Active; Elephant overrides merged with built-in defaults. |
