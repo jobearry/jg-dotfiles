@@ -35,7 +35,7 @@
         "battery",
         "battery#bat2",
         "clock",
-        // "tray",
+        "tray",
         "custom/power"
     ],
     // Modules configuration
@@ -109,12 +109,12 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-        // "icons": {
-        //   "blueman": "bluetooth",
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+          "blueman": "bluetooth"
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
+        }
     },
     "clock": {
         // "timezone": "America/New_York",

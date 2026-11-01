@@ -14,6 +14,7 @@ local closeWindowBind = hl.bind("SUPER + W", hl.dsp.window.close())
 -- Log out: use hyprshutdown's menu when present, otherwise quit Hyprland directly.
 hl.bind("SUPER + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))

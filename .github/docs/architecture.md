@@ -82,6 +82,17 @@ Waybar's `custom/wallpaper` module is the picker:
 - Left click: `waypaper`
 - Right click: `waypaper --restore`
 
+## Bluetooth
+
+Hyprland starts `blueman-applet` for a Bluetooth tray icon, and Waybar's tray module displays it. `SUPER + B` opens `blueman-manager`.
+
+On Arch Linux, install `bluez`, `bluez-utils`, and `blueman`, then enable the Bluetooth service:
+
+```sh
+sudo pacman -S bluez bluez-utils blueman
+sudo systemctl enable --now bluetooth.service
+```
+
 ## Launcher flow
 
 1. Hyprland starts.
