@@ -14,7 +14,7 @@
   "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
@@ -95,6 +95,6 @@
   "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
-    "*.md": "vscode.markdown.preview.editor"
+    "*.md": "vscode.markdown.editor"
   }
 }
