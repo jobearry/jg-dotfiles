@@ -14,4 +14,8 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
   -- Prewarm Walker; SUPER + SPACE activates it through its socket.
   hl.exec_cmd("walker --gapplication-service")
+  -- Hide minimize/maximize/close buttons on GTK client-side decorations.
+  -- Hyprland draws none itself; these come from the toolkit. GTK/Firefox read
+  -- this GSettings key (settings.ini is ignored while dconf is available).
+  hl.exec_cmd("gsettings set org.gnome.desktop.wm.preferences button-layout ':'")
 end)
